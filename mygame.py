@@ -70,7 +70,7 @@ while is_working:
     for bonus in bonuses:
         bonus[1] = bonus[1].move(0, bonus[2])
         main_surface.blit(bonus[0], bonus[1])
-        if bonus[1].left < 0:
+        if bonus[1].bottom >= height:
             bonuses.pop(bonuses.index(bonus))
         if ball_rect.colliderect(bonus[1]):
            bonuses.pop(bonuses.index(bonus))
